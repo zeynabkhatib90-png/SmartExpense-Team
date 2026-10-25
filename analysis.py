@@ -19,9 +19,14 @@ def highest_expense(expenses):
 
 
 def remaining_budget(budget, expenses):
-    """Budget minus spending. Raises ValueError if the budget is negative."""
+    """Budget minus spending. Raises ValueError if the budget is negative or not a number."""
+    if not isinstance(budget, (int, float)) or isinstance(budget, bool):
+        raise ValueError("Budget must be a number")
     if budget < 0:
         raise ValueError("Budget cannot be negative")
+    for e in expenses:
+        if not isinstance(e["amount"], (int, float)) or isinstance(e["amount"], bool):
+            raise ValueError("Expense amounts must be numbers")
     return budget - total_spending(expenses)
 
 

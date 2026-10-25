@@ -36,3 +36,11 @@ def test_remaining_budget_negative_budget():
     # error case: invalid input
     with pytest.raises(ValueError):
         remaining_budget(-10, EXPENSES)
+
+
+def test_remaining_budget_invalid_types():
+    # error case: budget or amounts that are not numbers
+    with pytest.raises(ValueError):
+        remaining_budget("100", EXPENSES)
+    with pytest.raises(ValueError):
+        remaining_budget(100, [{"name": "X", "amount": "abc", "category": "food"}])

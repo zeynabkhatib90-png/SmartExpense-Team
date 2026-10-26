@@ -1,3 +1,6 @@
 # SmartExpense-Team
+
 Personal Expense Tracker using Python and GitHub Actions
-Project status: Analysis module complete.
+
+Project status: Expense management and analysis modules completed.
+
